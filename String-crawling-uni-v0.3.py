@@ -60,7 +60,7 @@ def comp_noclass():
 
 while True:
     print("----------------------------------------------------------------------------------------------------------")
-    inp = input("String crawling V0.2""\n""0- Run""\n""1- Word samples""\n""2- Regular expressions""\n""3- File names""\n""4- Column setings""\n""5- help""\n""6- Exit""\n""> ")
+    inp = input("String crawling V0.3""\n""0- Run""\n""1- Word samples""\n""2- Regular expressions""\n""3- File names""\n""4- Column setings""\n""5- help""\n""6- Exit""\n""> ")
     if inp == '1':
         if input("1- Show Word samples""\n""2- Enter new Word samples""\n""> ") == '1':
             print(smpl)
