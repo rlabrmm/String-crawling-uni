@@ -106,7 +106,7 @@ def comp_classing(wordlist):
         
 while True:
     print("----------------------------------------------------------------------------------------------------------")
-    inp = input("String crawling V0.4""\n""0- Run String Crawling""\n""1- Run String Crawling with Classification""\n""2- Word samples""\n""3- Regular expressions""\n""4- File names""\n""5- Column setings""\n""6- help""\n""7- Exit""\n""> ")
+    inp = input("String crawling V0.5""\n""0- Run String Crawling""\n""1- Run String Crawling with Classification""\n""2- Word samples""\n""3- Regular expressions""\n""4- File names""\n""5- Column setings""\n""6- help""\n""7- Exit""\n""> ")
     if inp == '2':
         if input("1- Show Word samples""\n""2- Enter new Word samples""\n""> ") == '1':
             print(smpl)
