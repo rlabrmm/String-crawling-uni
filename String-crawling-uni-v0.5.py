@@ -1,8 +1,11 @@
 import csv
 import string
 
+#thease are first and default values for program that written down for finding spams in youtube comments.
+#do not change two string at first.
 smpl = ['Regular expression', 'ClassificatioN', 'cahnnel:', 'sub', 'subscribe', 'suscribe', 'leave', 'message', 'like', 'comment', 'comment', 'please', 'please message', 'channle', 'tube', '{tube}', 'you[tube]', '(tube)', '{youtube}', '[youtube]', '(youtube)', 'youtube/', 'yt', 'http:', 'https:', 'watch?', '//', 'check', 'out', 'leave', 'my', 'check', 'youtube', '.com', 'com', '.net', 'net', '.org', 'org', '.tv', 'tv', '.me', 'me', '.co', 'co', 'website', 'blog', 'video', 'follow', 't-shirts', 'v-necks', 'accessories', 'visit', 'gift', 'card', 'giftcard', 'on', 'twitter', 'facebook', 'youtube', 'omel', 'kick', 'instakgram', '@', 'search' , 'ig', 'fb', 'gc', 'tw']
 regexp = ['http', 'watch', '//', 'com', 'net', 'org', 'tv', 'me', 'co', '@', 'tube']
+#other default values 
 csv_input = 'Empty'
 csv_output = 'Empty'
 class_clo = 'Empty'
@@ -10,6 +13,7 @@ content_clo = 'Empty'
 class_clo = ''
 
 def comp_classed(wordlist):
+    #the fucntion that use for classified data 
     spam = []
     respam = []
     smpl2 = wordlist + regexp 
@@ -19,6 +23,7 @@ def comp_classed(wordlist):
             spamwriter.writerow(smpl2)
             reader = csv.DictReader(csvrw)
             for row in reader:
+                #class_clo is Classification coluwn
                 if row[class_clo] == '1':
                     string_low = row[content_clo].lower()
                     string_list = string_low.split(' ')        
@@ -27,6 +32,7 @@ def comp_classed(wordlist):
                             spam.append('1')
                         else:
                             spam.append('0')
+                    #this part checking the word for finding Regular expressions 
                     spam[0] = '0'
                     for re in regexp:
                         if not string_low.find(re) == -1:
@@ -42,6 +48,7 @@ def comp_classed(wordlist):
             print("The job has been finished and {} has been created".format(csv_output))
 
 def comp_noclass(wordlist):
+    #this funtion will use for non classified data
     spam = []
     respam = []
     smpl2 = wordlist + regexp 
@@ -73,6 +80,7 @@ def comp_noclass(wordlist):
             print("The job has been finished and {} has been created".format(csv_output))
 
 def comp_classing(wordlist):
+    #this baby will use for non classified data and do the classification for you
     spam = []
     respam = []
     smpl2 = wordlist + regexp 
@@ -105,14 +113,15 @@ def comp_classing(wordlist):
             print("The job has been finished and {} has been created".format(csv_output))
         
 while True:
+    #and finaly this loop will keep app going and get inputs from user for the job
     print("----------------------------------------------------------------------------------------------------------")
-    inp = input("String crawling V0.5""\n""0- Run String Crawling""\n""1- Run String Crawling with Classification""\n""2- Word samples""\n""3- Regular expressions""\n""4- File names""\n""5- Column setings""\n""6- help""\n""7- Exit""\n""> ")
+    inp = input("String crawling V0.4""\n""0- Run String Crawling""\n""1- Run String Crawling with Classification""\n""2- Word samples""\n""3- Regular expressions""\n""4- File names""\n""5- Column setings""\n""6- help""\n""7- Exit""\n""> ")
     if inp == '2':
         if input("1- Show Word samples""\n""2- Enter new Word samples""\n""> ") == '1':
             print(smpl)
         else:
             print("Enter done when you done....""\n""> ")
-            smpl = ['Regular expression', 'Classification']
+            smpl = ['Regular expression', 'ClassificatioN']
             while True:
                 new_smpl = input()
                 if new_smpl == "done":
