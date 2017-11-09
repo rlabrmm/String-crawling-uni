@@ -165,13 +165,20 @@ while True:
     elif inp == '6':
         print("Author: RlabRmm""\n""With this mini app you can scan amount of data for finding a special words""\n" "and expressions in sentences as CSV file and mark the word done in every sentence""\n""for this you have to config some setings thru menu""\n""if your data hase been classified for being scaned or not you can add the premission in app in menu 4""\n")
     elif inp == '0':
-        print("String Crawling is Running...""\n")
-        if not class_clo == '':
-            comp_classed(smpl)
-        else:
-            comp_noclass(smpl)
+        try:
+            if not class_clo == '':
+                comp_classed(smpl)
+                print("String Crawling is Running...""\n")
+            else:
+                comp_noclass(smpl)
+                print("String Crawling is Running...""\n")
+        except: 
+                print("It looks some thing goes wrong. Please check your File and column seting and try again")
     elif inp == '1':
-        print("String Crawling with Classification is Running...""\n")
-        comp_classing(smpl)
+        try:
+            print("String Crawling with Classification is Running...""\n")
+            comp_classing(smpl)
+        except:
+            print("It looks some thing goes wrong. Please check your File and column seting and try again")
     else:
         continue          
