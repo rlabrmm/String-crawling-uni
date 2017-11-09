@@ -46,8 +46,6 @@ def comp_classed(wordlist):
                     spam = []
                     respam = []
             print("The job has been finished and {} has been created".format(csv_output))
-            csv_output.close()
-            csv_input.close()
 
 def comp_noclass(wordlist):
     #this funtion will use for non classified data
@@ -80,8 +78,6 @@ def comp_noclass(wordlist):
                 spam = []
                 respam = []
             print("The job has been finished and {} has been created".format(csv_output))
-            csv_output.close()
-            csv_input.close()
 
 def comp_classing(wordlist):
     #this baby will use for non classified data and do the classification for you
@@ -115,8 +111,6 @@ def comp_classing(wordlist):
                 spam = []
                 respam = []
             print("The job has been finished and {} has been created".format(csv_output))
-            csv_output.close()
-            csv_input.close()
         
 while True:
     #and finaly this loop will keep app going and get inputs from user for the job
@@ -172,13 +166,13 @@ while True:
             else:
                 print("String Crawling is Running...""\n")
                 comp_noclass(smpl)
-        except: 
+        except IOError: 
                 print("It looks some thing goes wrong. Please check your File and column seting and try again")
     elif inp == '1':
         try:
             print("String Crawling with Classification is Running...""\n")
             comp_classing(smpl)
-        except:
+        except IOError:
             print("It looks some thing goes wrong. Please check your File and column seting and try again")
     else:
         continue          
