@@ -167,11 +167,11 @@ while True:
     elif inp == '0':
         try:
             if not class_clo == '':
+                print("String Crawling is Running...""\n")
                 comp_classed(smpl)
-                print("String Crawling is Running...""\n")
             else:
-                comp_noclass(smpl)
                 print("String Crawling is Running...""\n")
+                comp_noclass(smpl)
         except: 
                 print("It looks some thing goes wrong. Please check your File and column seting and try again")
     elif inp == '1':
